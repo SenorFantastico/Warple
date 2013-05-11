@@ -20,6 +20,7 @@
 #import "MKStoreManager.h"
 #import "LevelWon.h"
 #import <StoreKit/StoreKit.h>
+#import "GKAchievementHandler.h"
 
 
 @implementation Game
@@ -263,40 +264,42 @@
     float Warped_100 = (TotalWarps/100.0f)*100.0f;
     float Warped_500 = (TotalWarps/500.0f)*100.0f;
     float Warped_1000 = (TotalWarps/1000.0f)*100.0f;
+    bool isAchWarped_10 = [defaults boolForKey:@"ACH:501710"];
+    bool isAchWarped_100 = [defaults boolForKey:@"ACH:5017100"];
+    bool isAchWarped_500 = [defaults boolForKey:@"ACH:5017warp500"];
+    bool isAchWarped_1000 = [defaults boolForKey:@"ACH:50171000"];
+    
+    
     NSLog(@"%.0f",Warped_10);
     
-    if (TotalWarps<=10) {
+    if (TotalWarps<=10 || !isAchWarped_10 ) {
         [self reportAchievementIdentifier:@"501710" percentComplete:Warped_10];
         [self reportAchievementIdentifier:@"5017100" percentComplete:Warped_100];
         [self reportAchievementIdentifier:@"5017warp500" percentComplete:Warped_500];
         [self reportAchievementIdentifier:@"50171000" percentComplete:Warped_1000];
-    }else if (TotalWarps<=100) {
+    }else if (TotalWarps<=100 || !isAchWarped_100) {
         [self reportAchievementIdentifier:@"5017100" percentComplete:Warped_100];
         [self reportAchievementIdentifier:@"5017warp500" percentComplete:Warped_500];
         [self reportAchievementIdentifier:@"50171000" percentComplete:Warped_1000];
-    }else if (TotalWarps<=500) {
+    }else if (TotalWarps<=500 || !isAchWarped_500) {
         [self reportAchievementIdentifier:@"5017warp500" percentComplete:Warped_500];
         [self reportAchievementIdentifier:@"50171000" percentComplete:Warped_1000];
-    }
-    else if (TotalWarps<=1000) {
+    }else if (TotalWarps<=1000 || !isAchWarped_1000) {
         [self reportAchievementIdentifier:@"50171000" percentComplete:Warped_1000];
     }
-    switch (TotalWarps) {
-        case 10:
-            //Show note
-            break;
-        case 100:
-            //Show note
-            break;
-        case 500:
-            //Show note
-            break;
-        case 1000:
-            //Show note
-            break;
-            
-        default:
-            break;
+    if(TotalWarps >= 10 && !isAchWarped_10){
+            [[GKAchievementHandler defaultHandler] notifyAchievementTitle:@"I Can Do This!" andMessage:@"Warped 10 Times!"];
+        NSLog(@"Player Achieved I Can Do This");
+        [defaults setBool:TRUE forKey:@"ACH:501710"];
+    }else if (TotalWarps >= 100 && !isAchWarped_100){
+            [[GKAchievementHandler defaultHandler] notifyAchievementTitle:@"Through The Loop" andMessage:@"Warped 100 Times!"];
+        [defaults setBool:TRUE forKey:@"ACH:5017100"];
+    } else if (TotalWarps >= 500 && !isAchWarped_500){
+            [[GKAchievementHandler defaultHandler] notifyAchievementTitle:@"On My Way..." andMessage:@"Warped 500 Times!"];
+        [defaults setBool:TRUE forKey:@"ACH:5017warp500"];
+    } else if (TotalWarps >= 1000 && !isAchWarped_1000){
+            [[GKAchievementHandler defaultHandler] notifyAchievementTitle:@"Portal Master" andMessage:@"Warped 1000 Times!"];
+        [defaults setBool:TRUE forKey:@"ACH:50171000"];
     }
     
     //set achievments here

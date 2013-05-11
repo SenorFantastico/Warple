@@ -32,9 +32,9 @@
 
 #import "MKSKSubscriptionProduct.h"
 #import "NSData+MKBase64.h"
-#if ! __has_feature(objc_arc)
-#error MKStoreKit is ARC only. Either turn on ARC for the project or use -fobjc-arc flag
-#endif
+//#if ! __has_feature(objc_arc)
+//#error MKStoreKit is ARC only. Either turn on ARC for the project or use -fobjc-arc flag
+//#endif
 
 #ifndef __IPHONE_5_0
 #error "MKStoreKit uses features (NSJSONSerialization) only available in iOS SDK  and later."

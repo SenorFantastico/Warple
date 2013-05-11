@@ -81,6 +81,10 @@
     }
     [defaults setInteger:nil forKey:@"Warps"];
     [self resetAchievements];
+    [defaults setBool:FALSE forKey:@"ACH:501710"];
+    [defaults setBool:FALSE forKey:@"ACH:5017100"];
+    [defaults setBool:FALSE forKey:@"ACH:5017warp500"];
+    [defaults setBool:FALSE forKey:@"ACH:50171000"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
 }

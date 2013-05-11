@@ -18,6 +18,6 @@
 
 +(CCScene *) scene;
 
-@property (retain) UISwipeGestureRecognizer * swipeRightRecognizer;
+@property (strong) UISwipeGestureRecognizer * swipeRightRecognizer;
 
 @end

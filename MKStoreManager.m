@@ -39,9 +39,9 @@
 #import "MKSKSubscriptionProduct.h"
 #import "MKSKProduct.h"
 #import "NSData+MKBase64.h"
-#if ! __has_feature(objc_arc)
-#error MKStoreKit is ARC only. Either turn on ARC for the project or use -fobjc-arc flag
-#endif
+//#if ! __has_feature(objc_arc)
+//#error MKStoreKit is ARC only. Either turn on ARC for the project or use -fobjc-arc flag
+//#endif
 
 #ifndef __IPHONE_5_0
 #error "MKStoreKit uses features (NSJSONSerialization) only available in iOS SDK  and later."
@@ -557,12 +557,12 @@ static MKStoreManager* _sharedStoreManager;
 #ifdef __IPHONE_6_0
 -(void) hostedContentDownloadStatusChanged:(NSArray*) hostedContents {
   
-  __block SKDownload *thisHostedContent = nil;
+  __weak SKDownload *thisHostedContent = nil;
   
   NSMutableArray *itemsToBeRemoved = [NSMutableArray array];
   [hostedContents enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
     
-    thisHostedContent = obj;
+    
     
     [self.hostedContents enumerateObjectsUsingBlock:^(id obj1, NSUInteger idx1, BOOL *stop1) {
       

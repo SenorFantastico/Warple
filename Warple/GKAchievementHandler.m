@@ -67,18 +67,13 @@ static GKAchievementHandler *defaultHandler = nil;
     return self;
 }
 
-- (void)dealloc
-{
-    [_queue release];
-    [_image release];
-    [super dealloc];
-}
+
 
 #pragma mark -
 
 - (void)notifyAchievement:(GKAchievementDescription *)achievement
 {
-    GKAchievementNotification *notification = [[[GKAchievementNotification alloc] initWithAchievementDescription:achievement] autorelease];
+    GKAchievementNotification *notification = [[GKAchievementNotification alloc] initWithAchievementDescription:achievement];
     notification.frame = kGKAchievementFrameStart;
     notification.handlerDelegate = self;
 
@@ -91,7 +86,7 @@ static GKAchievementHandler *defaultHandler = nil;
 
 - (void)notifyAchievementTitle:(NSString *)title andMessage:(NSString *)message
 {
-    GKAchievementNotification *notification = [[[GKAchievementNotification alloc] initWithTitle:title andMessage:message] autorelease];
+    GKAchievementNotification *notification = [[GKAchievementNotification alloc] initWithTitle:title andMessage:message];
     notification.frame = kGKAchievementFrameStart;
     notification.handlerDelegate = self;
 
