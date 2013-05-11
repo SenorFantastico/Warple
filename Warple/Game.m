@@ -227,7 +227,7 @@
         NSDictionary *properties = [_tileMap propertiesForGID:tileGid];
     
         if (properties)
-        {
+        {//
             NSString *Finish = [properties valueForKey:@"Finish"];
             NSString *Yellow = [properties valueForKey:@"Yellow"];
             NSString *Freeze = [properties valueForKey:@"Freeze"];
