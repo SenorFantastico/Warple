@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>animations</key>
+	<dict>
+		<key>Genie_Walk</key>
+		<dict>
+			<key>delay</key>
+			<real>0.04166</real>
+			<key>frames</key>
+			<array>
+				<string>Genie0001.png</string>
+				<string>Genie0002.png</string>
+				<string>Genie0003.png</string>
+				<string>Genie0004.png</string>
+				<string>Genie0005.png</string>
+				<string>Genie0006.png</string>
+				<string>Genie0007.png</string>
+				<string>Genie0008.png</string>
+				<string>Genie0009.png</string>
+				<string>Genie0010.png</string>
+				<string>Genie0011.png</string>
+				<string>Genie0012.png</string>
+				<string>Genie0013.png</string>
+				<string>Genie0014.png</string>
+				<string>Genie0015.png</string>
+				<string>Genie0016.png</string>
+				<string>Genie0017.png</string>
+				<string>Genie0018.png</string>
+				<string>Genie0019.png</string>
+				<string>Genie0020.png</string>
+				<string>Genie0021.png</string>
+				<string>Genie0022.png</string>
+				<string>Genie0023.png</string>
+				<string>Genie0024.png</string>
+				<string>Genie0025.png</string>
+				<string>Genie0026.png</string>
+				<string>Genie0027.png</string>
+				<string>Genie0028.png</string>
+				<string>Genie0029.png</string>
+				<string>Genie0030.png</string>
+				<string>Genie0031.png</string>
+				<string>Genie0032.png</string>
+				<string>Genie0033.png</string>
+				<string>Genie0034.png</string>
+				<string>Genie0035.png</string>
+				<string>Genie0036.png</string>
+				<string>Genie0037.png</string>
+				<string>Genie0038.png</string>
+			</array>
+		</dict>
+	</dict>
+</dict>
+</plist>
